@@ -6,3 +6,6 @@ dist/
 **/*.egg-info
 **/build
 .DS_Store
+# pixi environments
+.pixi
+*.egg-info

@@ -12,3 +12,20 @@ line-length = 88
 [build-system]
 requires = ["setuptools >= 61"]
 build-backend = "setuptools.build_meta"
+[tool.pixi.project]
+name = "ordinalgbt"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+ordinalgbt = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+postinstall = "pip install --no-build-isolation --no-deps --disable-pip-version-check -e ."
+
+[tool.pixi.dependencies]
+lightgbm = "<4"
+scikit-learn = ">=1.5.2,<2"
+ipykernel = ">=6.29.5,<7"
+pip = ">=24.2,<25"
+pandas = ">=2.2.3,<3"
